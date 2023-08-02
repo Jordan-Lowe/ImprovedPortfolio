@@ -54,6 +54,7 @@ const WhoSubtitle = styled.h2`
 
 const WhoList = styled.ul`
 	margin-top: 0;
+	margin-left: 0;
 	list-style: none;
 	margin-bottom: 15px;
 	display: flex;
@@ -68,10 +69,11 @@ const WhoDescription = styled.li`
 	transition-property: transform;
 	transition-duration: 300ms;
 	transition-timing-function: ease-in-out;
+	cursor: pointer;
 
 	&:hover {
 		transform-style: flat;
-		transform: scale(1.25);
+		transform: scale(1.15);
 	}
 `;
 
@@ -92,7 +94,7 @@ const Who = () => {
 			<WhoSection>
 				<WhoContainer>
 					<WhoLeft>
-						<Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
+						<Canvas camera={{ fov: 25, position: [6, 6, 6] }}>
 							<OrbitControls enableZoom={false} autoRotate />
 							<ambientLight intensity={1} />
 							<directionalLight position={[3, 2, 1]} />

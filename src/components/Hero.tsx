@@ -17,14 +17,25 @@ const HeroSection = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		height: 200vh;
+	}
 `;
 
 const HeroContainer = styled.div`
-	height: 100vh;
+	height: 100%;
 	scroll-snap-align: center;
 	width: 70vw;
 	display: flex;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 `;
 
 const HeroLeft = styled.div`
@@ -33,16 +44,30 @@ const HeroLeft = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	gap: 10px;
+
+	@media only screen and (max-width: 768px) {
+		flex: 1;
+		align-items: center;
+	}
 `;
 
 const HeroRight = styled.div`
 	flex: 3;
 	position: relative;
+
+	@media only screen and (max-width: 768px) {
+		flex: 1;
+		width: 100%;
+	}
 `;
 
 const HeroTitle = styled.h1`
 	font-size: 74px;
 	margin-bottom: 0;
+
+	@media only screen and (max-width: 768px) {
+		text-align: center;
+	}
 `;
 
 const HeroWhatIDo = styled.div`
@@ -63,6 +88,11 @@ const HeroSubtitle = styled.h2`
 const HeroDescription = styled.p`
 	font-size: 24px;
 	color: lightgray;
+
+	@media only screen and (max-width: 768px) {
+		padding: 20px;
+		text-align: center;
+	}
 `;
 
 const HeroButton = styled.button`
@@ -88,6 +118,11 @@ const HeroImage = styled.img`
 	margin: auto;
 	animation: ${animate} 2s infinite ease alternate;
 	pointer-events: none;
+
+	@media only screen and (max-width: 768px) {
+		width: 300px;
+		height: 300px;
+	}
 `;
 
 const Hero = () => {
@@ -122,8 +157,10 @@ const Hero = () => {
 							<Sphere args={[1, 100, 200]} scale={2.4}>
 								<MeshDistortMaterial
 									color="#5787f7"
+									transparent={true}
+									opacity={0.7}
 									attach="material"
-									distort={0.5}
+									distort={0.6}
 									speed={2}
 								/>
 							</Sphere>

@@ -7,7 +7,7 @@ const Development = () => {
 	return (
 		<>
 			<Canvas>
-				<Stage environment={"city"} intensity={0.4}>
+				<Stage environment={"park"} intensity={0.4}>
 					<SciFiCom />
 				</Stage>
 				<OrbitControls enableZoom={false} />

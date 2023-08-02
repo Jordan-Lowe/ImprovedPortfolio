@@ -12,9 +12,9 @@ const Map = () => {
 		<ComposableMap
 			projection="geoAzimuthalEqualArea"
 			projectionConfig={{
-				rotate: [-10.0, -52.0, 0],
+				rotate: [-155.7633315, 28.8484597, 0],
 				center: [-5, -3],
-				scale: 1500,
+				scale: 700,
 			}}
 			style={{ width: "100%", height: "100%" }}
 		>
@@ -31,7 +31,7 @@ const Map = () => {
 				}
 			</Geographies>
 			<Annotation
-				subject={[2.3522, 48.8566]}
+				subject={[174.7633315, -36.8484597]}
 				dx={-90}
 				dy={-30}
 				connectorProps={{
@@ -41,7 +41,7 @@ const Map = () => {
 				}}
 			>
 				<text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-					{"Paris"}
+					{"Auckland Based"}
 				</text>
 			</Annotation>
 		</ComposableMap>

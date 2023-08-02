@@ -10,6 +10,13 @@ const NavBarImg = styled.ul`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		width: 50%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 `;
 
 const NavImgList = styled.li`

@@ -6,6 +6,10 @@ const NavBarSection = styled.div`
 	display: flex;
 	justify-content: center;
 	width: 95%;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const NavBarContainer = styled.div`
@@ -14,6 +18,11 @@ const NavBarContainer = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 10px 0px;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		padding: 10px;
+	}
 `;
 
 const NavLinks = styled.div`
@@ -34,6 +43,10 @@ const NavUl = styled.ul`
 	display: flex;
 	gap: 10px;
 	list-style: none;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const NavList = styled.li`

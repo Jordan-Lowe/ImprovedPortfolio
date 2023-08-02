@@ -55,6 +55,7 @@ const ContactTextArea = styled.textarea`
 const ContactButton = styled.button`
 	background-color: #da4ea2;
 	color: white;
+	font-size: 20px;
 	font-weight: bold;
 	border-radius: 5px;
 	cursor: pointer;

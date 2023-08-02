@@ -6,7 +6,7 @@ export default function SciFiCom(props: JSX.IntrinsicElements["group"]) {
 		"../../public/Images/sciFiCom-transformed.glb"
 	);
 	return (
-		<group {...props} dispose={null}>
+		<group {...props} dispose={null} scale={[0.3, 0.3, 0.3]}>
 			<mesh
 				geometry={nodes.scifi_computer_screen_0.geometry}
 				material={materials.screen}
