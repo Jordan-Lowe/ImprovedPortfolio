@@ -1,23 +1,49 @@
+import React, { useMemo } from "react";
+import { Line, Sphere } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import * as THREE from "three";
 
-
-import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-
-export default function ReactLogo(props: JSX.IntrinsicElements["group"]) {
-	const { nodes, materials } = useGLTF(
-		"../../public/Images/react-transformed.glb"
+const Shape = () => {
+	const points = useMemo(
+		() =>
+			new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(
+				100
+			),
+		[]
 	);
 	return (
-		<group {...props} dispose={null}>
-			<mesh
-				geometry={nodes["React-Logo_Material002_0"].geometry}
-				material={materials["Material.002"]}
-				position={[0, 0.079, 0.181]}
-				rotation={[0, 0, -Math.PI / 2]}
-				scale={[0.392, 0.392, 0.527]}
+		<group>
+			<Line worldUnits points={points} color="#cae6f1" lineWidth={0.3} />
+			<Line
+				worldUnits
+				points={points}
+				color="#cae6f1"
+				lineWidth={0.3}
+				rotation={[0, 0, 1]}
 			/>
+			<Line
+				worldUnits
+				points={points}
+				color="#cae6f1"
+				lineWidth={0.3}
+				rotation={[0, 0, -1]}
+			/>
+			<Sphere args={[0.55, 64, 64]}>
+				<meshBasicMaterial color={[6, 0.5, 2]} toneMapped={false} />
+			</Sphere>
 		</group>
 	);
-}
+};
 
-useGLTF.preload("/react-transformed.glb");
+const ReactLogo = () => {
+	return (
+		<>
+			<Shape />
+			<EffectComposer>
+				<Bloom mipmapBlur luminanceThreshold={1} />
+			</EffectComposer>
+		</>
+	);
+};
+
+export default ReactLogo;

@@ -21,7 +21,7 @@ const WebDesDescription = styled.p`
 const WebDesign = () => {
 	return (
 		<>
-			<Canvas>
+			<Canvas >
 				<Stage environment={"city"} intensity={0.6}>
 					<ReactLogo />
 				</Stage>
