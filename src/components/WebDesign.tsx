@@ -39,7 +39,7 @@ const WebDesign = () => {
 					autoRotateSpeed={4}
 				/>
 			</Canvas>
-			<WebDesDescription>Hi</WebDesDescription>
+			<WebDesDescription>I have extensive experience</WebDesDescription>
 		</>
 	);
 };

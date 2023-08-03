@@ -35,7 +35,7 @@ const Development = () => {
 				</Stage>
 				<OrbitControls enableZoom={false} />
 			</Canvas>
-			<DevDescription>Hi</DevDescription>
+			<DevDescription></DevDescription>
 		</>
 	);
 };

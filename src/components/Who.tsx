@@ -123,7 +123,7 @@ const Who = () => {
 						<WhoList>
 							<WhoDescription>Typescript/Javascript</WhoDescription>
 							<WhoDescription>React</WhoDescription>
-							<WhoDescription>HTML/CSS</WhoDescription>
+							<WhoDescription>HTML/CSS/Tailwind</WhoDescription>
 							<WhoDescription>SQL</WhoDescription>
 							<WhoDescription>React Queries & Redux</WhoDescription>
 							<WhoDescription>Github</WhoDescription>

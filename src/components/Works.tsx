@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components";
 import WebDesign from "./WebDesign";
 import Development from "./Development";
 import ProductDesign from "./ProductDesign";
+import TechnicalSkills from "./TechnicalSkills";
+import SocialMedia from "./SocialMedia";
 
 const WorksSection = styled.div`
 	height: 100vh;
@@ -82,7 +84,7 @@ const AfterItem = styled.span`
 const data = [
 	"Web Design",
 	"Development",
-	"Illustration",
+	"Technical Skills",
 	"Product Design",
 	"Social Media",
 ];
@@ -107,8 +109,12 @@ const Works = () => {
 						<WebDesign />
 					) : work === "Development" ? (
 						<Development />
-					) : (
+					) : work === "Technical Skills" ? (
+						<TechnicalSkills />
+					) : work === "Product Design" ? (
 						<ProductDesign />
+					) : (
+						<SocialMedia />
 					)}
 				</WorksRight>
 			</WorksContainer>

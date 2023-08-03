@@ -145,7 +145,7 @@ const Hero = () => {
 							technical expertise and cemented my enthusiasm for coding. My core
 							strengths lie in JavaScript, TypeScript, React, and SQL, and I'm
 							continually refining these skills, while concurrently exploring
-							the fascinating realm of Python.
+							the fascinating realm of Python, and C++.
 						</HeroDescription>
 						<HeroButton>Learn More</HeroButton>
 					</HeroLeft>
