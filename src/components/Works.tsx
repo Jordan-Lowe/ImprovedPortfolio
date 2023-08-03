@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 import WebDesign from "./WebDesign";
 import Development from "./Development";
 import ProductDesign from "./ProductDesign";
@@ -16,12 +16,22 @@ const WorksContainer = styled.div`
 	width: 70vw;
 	display: flex;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		flex-direction: column;
+	}
 `;
 
 const WorksLeft = styled.div`
 	flex: 1;
 	display: flex;
 	align-items: center;
+
+	@media only screen and (max-width: 768px) {
+		padding: 20px;
+		justify-content: center;
+	}
 `;
 
 const WorksRight = styled.div`
@@ -51,6 +61,12 @@ const WorksListItems = styled.li`
 	&:hover .afterItem {
 		animation: ${moveText} 0.8s linear both;
 	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 24px;
+		color: white;
+		-webkit-text-stroke: 0px white;
+	}
 `;
 
 const AfterItem = styled.span`
@@ -79,10 +95,7 @@ const Works = () => {
 				<WorksLeft>
 					<WorksUl>
 						{data.map((item) => (
-							<WorksListItems
-								key={item}
-								onClick={() => setWork(item)}
-							>
+							<WorksListItems key={item} onClick={() => setWork(item)}>
 								{item}
 								<AfterItem className="afterItem">{item}</AfterItem>
 							</WorksListItems>

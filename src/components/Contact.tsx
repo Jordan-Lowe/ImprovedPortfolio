@@ -21,10 +21,18 @@ const ContactLeft = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+
+	@media only screen and (max-width: 768px) {
+		justify-content: center;
+	}
 `;
 
 const ContactRight = styled.div`
 	flex: 1;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const ContactTitle = styled.h1`
@@ -36,6 +44,10 @@ const ContactForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+
+	@media only screen and (max-width: 768px) {
+		width: 300px;
+	}
 `;
 
 const ContactInput = styled.input`

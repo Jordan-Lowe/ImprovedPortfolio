@@ -22,6 +22,10 @@ const WhoContainer = styled.div`
 
 const WhoLeft = styled.div`
 	flex: 1;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const WhoRight = styled.div`
@@ -31,10 +35,19 @@ const WhoRight = styled.div`
 	justify-content: center;
 	gap: 10px;
 	position: relative;
+
+	@media only screen and (max-width: 768px) {
+		align-items: center;
+		text-align: center;
+	}
 `;
 
 const WhoTitle = styled.h1`
 	font-size: 74px;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 60px;
+	}
 `;
 
 const WhoWhatIDo = styled.div`

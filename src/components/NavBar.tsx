@@ -43,6 +43,8 @@ const NavUl = styled.ul`
 	display: flex;
 	gap: 10px;
 	list-style: none;
+	font-weight: 300;
+	font-family: Arial, Helvetica, sans-serif;
 
 	@media only screen and (max-width: 768px) {
 		display: none;

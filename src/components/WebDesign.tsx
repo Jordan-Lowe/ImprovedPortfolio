@@ -16,6 +16,14 @@ const WebDesDescription = styled.p`
 	position: absolute;
 	font-size: 20px;
 	font-weight: 300;
+
+	@media only screen and (max-width: 768px) {
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+	}
 `;
 
 const WebDesign = () => {
