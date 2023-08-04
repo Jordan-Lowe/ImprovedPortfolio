@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const CV_Logo = "../../public/Images/curriculum-vitae-resume-svgrepo-com.svg";
-const GITHUB_LOGO = "../../public/Images/github-mark-white.svg";
-const Linkdein_Logo = "../../public/Images/linkedin-icon-2.svg";
+const CV_Logo = "../../Images/curriculum-vitae-resume-svgrepo-com.svg";
+const GITHUB_LOGO = "../../Images/github-mark-white.svg";
+const Linkdein_Logo = "../../Images/linkedin-icon-2.svg";
 
 const NavBarImg = styled.ul`
 	list-style: none;
@@ -66,7 +66,7 @@ function NavBarLinks() {
 
 			<NavImgList>
 				<a
-					href="../../public/Pdf/Jordan Resume.pdf"
+					href="../../Pdf/Jordan Resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

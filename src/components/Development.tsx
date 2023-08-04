@@ -1,7 +1,4 @@
 import React from "react";
-import { OrbitControls, Stage } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import SciFiCom from "./SciFiCom";
 import styled from "styled-components";
 
 const DevDescription = styled.p`
@@ -29,13 +26,7 @@ const DevDescription = styled.p`
 const Development = () => {
 	return (
 		<>
-			<Canvas>
-				<Stage environment={"park"} intensity={0.4}>
-					<SciFiCom />
-				</Stage>
-				<OrbitControls enableZoom={false} />
-			</Canvas>
-			<DevDescription></DevDescription>
+			<DevDescription>Hi</DevDescription>
 		</>
 	);
 };

@@ -73,7 +73,7 @@ function NavBar() {
 				<NavLinks>
 					<div>
 						<NavLogo
-							src="../public/Images/jordan-lowe-logo.png"
+							src="../Images/jordan-lowe-logo.png"
 							alt="Logo_Img"
 						/>
 					</div>

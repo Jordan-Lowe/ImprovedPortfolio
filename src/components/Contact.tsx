@@ -36,6 +36,7 @@ const ContactRight = styled.div`
 `;
 
 const ContactTitle = styled.h1`
+	font-size: 40px;
 	font-weight: 200;
 `;
 

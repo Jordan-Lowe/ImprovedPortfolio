@@ -134,7 +134,7 @@ const Hero = () => {
 					<HeroLeft>
 						<HeroTitle>Jordan Lowe</HeroTitle>
 						<HeroWhatIDo>
-							<HeroLine src="../public/Images/line.png" alt="line" />
+							<HeroLine src="../Images/line.png" alt="line" />
 							<HeroSubtitle>Software Developer</HeroSubtitle>
 						</HeroWhatIDo>
 						<HeroDescription>
@@ -165,7 +165,7 @@ const Hero = () => {
 								/>
 							</Sphere>
 						</Canvas>
-						<HeroImage src="../public/Images/moon.png" alt="moon image" />
+						<HeroImage src="../Images/moon.png" alt="moon image" />
 					</HeroRight>
 				</HeroContainer>
 			</HeroSection>

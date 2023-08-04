@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Cube from "./Cube";
 import styled from "styled-components";
+import skills from "../LanguageInformation/skills.ts";
 
 const WhoSection = styled.div`
 	height: 100vh;
@@ -10,6 +11,7 @@ const WhoSection = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 `;
 
 const WhoContainer = styled.div`
@@ -65,6 +67,12 @@ const WhoSubtitle = styled.h2`
 	font-size: 30px;
 `;
 
+const WhoListContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+`;
+
 const WhoList = styled.ul`
 	margin-top: 0;
 	margin-left: 0;
@@ -90,18 +98,43 @@ const WhoDescription = styled.li`
 	}
 `;
 
-const WhoButton = styled.button`
-	background-color: #da4ea2;
-	color: white;
-	font-weight: 500;
-	width: 120px;
+const WhoListDescription = styled.p`
+	display: flex;
+	flex-direction: row;
+	width: 80%;
 	padding: 10px;
-	border: none;
+	background-color: #fff;
+	color: black;
 	border-radius: 5px;
-	cursor: pointer;
+	overflow: hidden;
+	white-space: normal;
+	font-size: 20px;
+	font-weight: 300;
+	height: auto;
+
+	@media only screen and (max-width: 768px) {
+		margin: auto;
+	}
 `;
 
+interface Skill {
+	name: string;
+	description: string;
+}
+
+function textWithBreaks(text: string) {
+	return text.split("\n").map((item, key) => {
+		return (
+			<React.Fragment key={key}>
+				{item}
+				<br />
+			</React.Fragment>
+		);
+	});
+}
+
 const Who = () => {
+	const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 	return (
 		<>
 			<WhoSection>
@@ -117,20 +150,27 @@ const Who = () => {
 					<WhoRight>
 						<WhoTitle>About My Work</WhoTitle>
 						<WhoWhatIDo>
-							<WhoLine src="../public/Images/line.png" alt="line" />
+							<WhoLine src="../Images/line.png" alt="line" />
 							<WhoSubtitle>Technical Skills</WhoSubtitle>
 						</WhoWhatIDo>
-						<WhoList>
-							<WhoDescription>Typescript/Javascript</WhoDescription>
-							<WhoDescription>React</WhoDescription>
-							<WhoDescription>HTML/CSS/Tailwind</WhoDescription>
-							<WhoDescription>SQL</WhoDescription>
-							<WhoDescription>React Queries & Redux</WhoDescription>
-							<WhoDescription>Github</WhoDescription>
-							<WhoDescription>Vitest & Jest</WhoDescription>
-							<WhoDescription>Python</WhoDescription>
-						</WhoList>
-						<WhoButton>See Projects</WhoButton>
+						<WhoListContainer>
+							<WhoList>
+								{skills.map((skill: Skill, index: number) => (
+									<WhoDescription
+										key={index}
+										onClick={() => setSelectedSkill(skill)}
+									>
+										{skill.name}
+									</WhoDescription>
+								))}
+							</WhoList>
+
+							{selectedSkill && (
+								<WhoListDescription>
+									{textWithBreaks(selectedSkill.description)}
+								</WhoListDescription>
+							)}
+						</WhoListContainer>
 					</WhoRight>
 				</WhoContainer>
 			</WhoSection>
