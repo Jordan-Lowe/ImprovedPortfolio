@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import Map from "./Map";
+import Spinner from "./Spinner";
+
+const Map = React.lazy(() => import("./Map"));
 
 const ContactSection = styled.div`
 	height: 100vh;
@@ -117,12 +119,16 @@ const Contact = () => {
 							rows={10}
 						></ContactTextArea>
 						<ContactButton type="submit">Send</ContactButton>
-						{success &&
-							"Your message has been sent. I will get back to you soon"}
+						<React.Suspense fallback={<Spinner />}>
+							{success &&
+								"Your message has been sent. I will get back to you soon"}
+						</React.Suspense>
 					</ContactForm>
 				</ContactLeft>
 				<ContactRight>
-					<Map />
+					<React.Suspense fallback={<Spinner />}>
+						<Map />
+					</React.Suspense>
 				</ContactRight>
 			</ContactContainer>
 		</ContactSection>

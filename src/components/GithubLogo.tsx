@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function GithubLogo(props) {
+export default function GithubLogo(props: JSX.IntrinsicElements["group"]) {
 	const { nodes, materials } = useGLTF("../Images/GithubLogo-transformed.glb");
 	return (
 		<group {...props} dispose={null}>

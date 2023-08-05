@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import NavBar from "./NavBar";
 import styled, { keyframes } from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import Spinner from "./Spinner";
 
 const animate = keyframes`
 	100% {
@@ -150,22 +151,24 @@ const Hero = () => {
 						<HeroButton>Learn More</HeroButton>
 					</HeroLeft>
 					<HeroRight>
-						<Canvas>
-							<OrbitControls enableZoom={false} />
-							<ambientLight intensity={1} />
-							<directionalLight position={[3, 2, 1]} />
-							<Sphere args={[1, 100, 200]} scale={2.4}>
-								<MeshDistortMaterial
-									color="#5787f7"
-									transparent={true}
-									opacity={0.7}
-									attach="material"
-									distort={0.6}
-									speed={2}
-								/>
-							</Sphere>
-						</Canvas>
-						<HeroImage src="../Images/moon.png" alt="moon image" />
+						<Suspense fallback={<Spinner />}>
+							<Canvas>
+								<OrbitControls enableZoom={false} />
+								<ambientLight intensity={1} />
+								<directionalLight position={[3, 2, 1]} />
+								<Sphere args={[1, 100, 200]} scale={2.4}>
+									<MeshDistortMaterial
+										color="#5787f7"
+										transparent={true}
+										opacity={0.7}
+										attach="material"
+										distort={0.6}
+										speed={2}
+									/>
+								</Sphere>
+							</Canvas>
+							<HeroImage src="../Images/moon.png" alt="moon image" />
+						</Suspense>
 					</HeroRight>
 				</HeroContainer>
 			</HeroSection>

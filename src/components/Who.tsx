@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Cube from "./Cube";
 import styled from "styled-components";
 import skills from "../LanguageInformation/skills.ts";
+import Spinner from "./Spinner.tsx";
 
 const WhoSection = styled.div`
 	height: 100vh;
@@ -101,16 +101,17 @@ const WhoDescription = styled.li`
 const WhoListDescription = styled.p`
 	display: flex;
 	flex-direction: row;
-	width: 80%;
+	left: 10%;
+	width: 60%;
 	padding: 10px;
-	background-color: #fff;
-	color: black;
+	color: white;
 	border-radius: 5px;
 	overflow: hidden;
 	white-space: normal;
 	font-size: 20px;
 	font-weight: 300;
 	height: auto;
+	position: relative;
 
 	@media only screen and (max-width: 768px) {
 		margin: auto;
@@ -133,6 +134,8 @@ function textWithBreaks(text: string) {
 	});
 }
 
+const Cube = lazy(() => import("./Cube"));
+
 const Who = () => {
 	const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 	return (
@@ -140,17 +143,21 @@ const Who = () => {
 			<WhoSection>
 				<WhoContainer>
 					<WhoLeft>
-						<Canvas camera={{ fov: 25, position: [6, 6, 6] }}>
-							<OrbitControls enableZoom={false} autoRotate />
-							<ambientLight intensity={1} />
-							<directionalLight position={[3, 2, 1]} />
-							<Cube />
-						</Canvas>
+						<Suspense fallback={<Spinner />}>
+							<Canvas camera={{ fov: 25, position: [6, 6, 6] }}>
+								<OrbitControls enableZoom={false} autoRotate />
+								<ambientLight intensity={1} />
+								<directionalLight position={[3, 2, 1]} />
+								<Cube />
+							</Canvas>
+						</Suspense>
 					</WhoLeft>
 					<WhoRight>
 						<WhoTitle>About My Work</WhoTitle>
 						<WhoWhatIDo>
-							<WhoLine src="../Images/line.png" alt="line" />
+							<Suspense fallback={<Spinner />}>
+								<WhoLine src="../Images/line.png" alt="line" />
+							</Suspense>
 							<WhoSubtitle>Technical Skills</WhoSubtitle>
 						</WhoWhatIDo>
 						<WhoListContainer>

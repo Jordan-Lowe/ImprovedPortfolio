@@ -1,17 +1,24 @@
+import React from "react";
 import "../public/styling/index.css";
 import Hero from "./components/Hero";
-import Who from "./components/Who";
-import Works from "./components/Works";
 import Contact from "./components/Contact";
+
+
+const Who = React.lazy(() => import("./components/Who"));
+const Works = React.lazy(() => import("./components/Works"));
 
 function App() {
 	return (
 		<>
 			<div className="AppContainer">
 				<Hero />
-				<Who />
-				<Works />
-				<Contact />
+				<React.Suspense fallback={""}>
+					<Who />
+				</React.Suspense>
+				<React.Suspense fallback={''}>
+					<Works />
+				</React.Suspense>
+					<Contact />
 			</div>
 		</>
 	);

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import WebDesign from "./WebDesign";
-import Development from "./Development";
-import ProductDesign from "./ProductDesign";
-import TechnicalSkills from "./TechnicalSkills";
-import SocialMedia from "./SocialMedia";
+import Spinner from "./Spinner";
+
+const WebDesign = React.lazy(() => import("./WebDesign"));
+const Development = React.lazy(() => import("./Development"));
+const ProductDesign = React.lazy(() => import("./ProductDesign"));
+const TechnicalSkills = React.lazy(() => import("./TechnicalSkills"));
+const SocialMedia = React.lazy(() => import("./SocialMedia"));
 
 const WorksSection = styled.div`
 	height: 100vh;
@@ -90,7 +92,7 @@ const data = [
 ];
 
 const Works = () => {
-	const [work, setWork] =  useState("Web Design");
+	const [work, setWork] = useState("Web Design");
 	return (
 		<WorksSection>
 			<WorksContainer>
@@ -106,15 +108,25 @@ const Works = () => {
 				</WorksLeft>
 				<WorksRight>
 					{work === "Web Design" ? (
-						<WebDesign />
+						<React.Suspense fallback={<Spinner />}>
+							<WebDesign />
+						</React.Suspense>
 					) : work === "Development" ? (
-						<Development />
+						<React.Suspense fallback={<Spinner />}>
+							<Development />
+						</React.Suspense>
 					) : work === "Technical Skills" ? (
-						<TechnicalSkills />
+						<React.Suspense fallback={<Spinner />}>
+							<TechnicalSkills />
+						</React.Suspense>
 					) : work === "Product Design" ? (
-						<ProductDesign />
+						<React.Suspense fallback={<Spinner />}>
+							<ProductDesign />
+						</React.Suspense>
 					) : (
-						<SocialMedia />
+						<React.Suspense fallback={<Spinner />}>
+							<SocialMedia />
+						</React.Suspense>
 					)}
 				</WorksRight>
 			</WorksContainer>
