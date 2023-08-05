@@ -4,7 +4,7 @@ import Spinner from "./Spinner";
 
 const WebDesign = React.lazy(() => import("./WebDesign"));
 const Development = React.lazy(() => import("./Development"));
-const ProductDesign = React.lazy(() => import("./ProductDesign"));
+const SoftSkills = React.lazy(() => import("./SoftSkills"));
 const TechnicalSkills = React.lazy(() => import("./TechnicalSkills"));
 const SocialMedia = React.lazy(() => import("./SocialMedia"));
 
@@ -87,7 +87,7 @@ const data = [
 	"Web Design",
 	"Development",
 	"Technical Skills",
-	"Product Design",
+	"Soft Skills",
 	"Social Media",
 ];
 
@@ -119,9 +119,9 @@ const Works = () => {
 						<React.Suspense fallback={<Spinner />}>
 							<TechnicalSkills />
 						</React.Suspense>
-					) : work === "Product Design" ? (
+					) : work === "Soft Skills" ? (
 						<React.Suspense fallback={<Spinner />}>
-							<ProductDesign />
+							<SoftSkills />
 						</React.Suspense>
 					) : (
 						<React.Suspense fallback={<Spinner />}>

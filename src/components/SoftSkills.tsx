@@ -1,9 +1,7 @@
+import React from "react";
+
 const SoftSkills = () => {
-	return (
-		<>
-			<div>SoftSkills</div>
-		</>
-	);
+	return <div>Soft Skills</div>;
 };
 
 export default SoftSkills;
