@@ -90,7 +90,7 @@ const data = [
 ];
 
 const Works = () => {
-	const [work, setWork] = useState("Web Design");
+	const [work, setWork] =  useState("Web Design");
 	return (
 		<WorksSection>
 			<WorksContainer>
