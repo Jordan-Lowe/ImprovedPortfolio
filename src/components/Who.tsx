@@ -4,6 +4,10 @@ import { OrbitControls } from "@react-three/drei";
 import styled from "styled-components";
 import skills from "../LanguageInformation/skills.ts";
 import Spinner from "./Spinner.tsx";
+<style>
+	@import
+	url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+</style>;
 
 const WhoSection = styled.div`
 	height: 100vh;
@@ -63,7 +67,7 @@ const WhoLine = styled.img`
 `;
 
 const WhoSubtitle = styled.h2`
-	color: #da4ea2;
+	color: #57a773;
 	font-size: 30px;
 `;
 
@@ -101,7 +105,8 @@ const WhoDescription = styled.li`
 const WhoListDescription = styled.p`
 	display: flex;
 	flex-direction: row;
-	left: 10%;
+	top: 39%;
+	left: 50%;
 	width: 60%;
 	padding: 10px;
 	color: white;
@@ -109,9 +114,10 @@ const WhoListDescription = styled.p`
 	overflow: hidden;
 	white-space: normal;
 	font-size: 20px;
-	font-weight: 300;
+	font-weight: 400;
 	height: auto;
-	position: relative;
+	position: absolute;
+	font-family: "Lato", sans-serif;
 
 	@media only screen and (max-width: 768px) {
 		margin: auto;

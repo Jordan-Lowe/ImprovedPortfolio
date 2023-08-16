@@ -11,7 +11,7 @@ export default function UTypescriptLogo(props: JSX.IntrinsicElements["group"]) {
 		() =>
 			new THREE.MeshStandardMaterial({
 				color: "#007acc",
-				opacity: 1,
+				opacity: 0,
 				transparent: false,
 			}),
 		[]

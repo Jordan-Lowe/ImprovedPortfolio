@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import NavBarLinks from "./NavBarLinks";
+<style>
+	@import
+	url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+</style>;
 
 const NavBarSection = styled.div`
 	display: flex;
@@ -43,8 +47,8 @@ const NavUl = styled.ul`
 	display: flex;
 	gap: 10px;
 	list-style: none;
-	font-weight: 300;
-	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-family: "Lato", sans-serif;
 
 	@media only screen and (max-width: 768px) {
 		display: none;
@@ -72,10 +76,7 @@ function NavBar() {
 			<NavBarContainer>
 				<NavLinks>
 					<div>
-						<NavLogo
-							src="../Images/jordan-lowe-logo.png"
-							alt="Logo_Img"
-						/>
+						<NavLogo src="../Images/jordan-lowe-logo.png" alt="Logo_Img" />
 					</div>
 					<NavUl>
 						<NavList>Home</NavList>

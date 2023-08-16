@@ -80,7 +80,7 @@ const AfterItem = styled.span`
 	overflow: hidden;
 	width: 0;
 	white-space: nowrap;
-	color: pink;
+	color: #ffffff;
 `;
 
 const data = [

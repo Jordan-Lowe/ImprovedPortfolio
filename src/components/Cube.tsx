@@ -16,8 +16,8 @@ const CubeFace = ({ position, rotation, text }) => {
 			<meshStandardMaterial side={DoubleSide}>
 				<RenderTexture attach="map" sourceFile={undefined}>
 					<PerspectiveCamera makeDefault position={[0, 0, 5]} />
-					<color attach="background" args={["white"]} />
-					<Text ref={textRef} fontSize={1} color="#555">
+					<color attach="background" args={["#57a773"]} />
+					<Text ref={textRef} fontSize={1} color="white">
 						{text}
 					</Text>
 				</RenderTexture>

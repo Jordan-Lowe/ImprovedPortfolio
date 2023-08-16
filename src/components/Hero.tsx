@@ -3,7 +3,12 @@ import NavBar from "./NavBar";
 import styled, { keyframes } from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
-import Spinner from "./Spinner";
+// import Spinner from "./Spinner";
+
+<style>
+	@import
+	url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+</style>;
 
 const animate = keyframes`
 	100% {
@@ -65,6 +70,8 @@ const HeroRight = styled.div`
 const HeroTitle = styled.h1`
 	font-size: 74px;
 	margin-bottom: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
 
 	@media only screen and (max-width: 768px) {
 		text-align: center;
@@ -82,13 +89,16 @@ const HeroLine = styled.img`
 `;
 
 const HeroSubtitle = styled.h2`
-	color: #da4ea2;
+	color: #57a773;
 	font-size: 30px;
+	font-family: "Montserrat", sans-serif;
 `;
 
 const HeroDescription = styled.p`
 	font-size: 24px;
 	color: lightgray;
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
 
 	@media only screen and (max-width: 768px) {
 		padding: 20px;
@@ -97,7 +107,7 @@ const HeroDescription = styled.p`
 `;
 
 const HeroButton = styled.button`
-	background-color: #da4ea2;
+	background-color: #57a773;
 	color: white;
 	font-weight: 500;
 	width: 100px;
@@ -105,6 +115,7 @@ const HeroButton = styled.button`
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	font-family: "Montserrat", sans-serif;
 `;
 
 const HeroImage = styled.img`
@@ -151,24 +162,22 @@ const Hero = () => {
 						<HeroButton>Learn More</HeroButton>
 					</HeroLeft>
 					<HeroRight>
-						<Suspense fallback={<Spinner />}>
-							<Canvas>
-								<OrbitControls enableZoom={false} />
-								<ambientLight intensity={1} />
-								<directionalLight position={[3, 2, 1]} />
-								<Sphere args={[1, 100, 200]} scale={2.4}>
-									<MeshDistortMaterial
-										color="#5787f7"
-										transparent={true}
-										opacity={0.7}
-										attach="material"
-										distort={0.6}
-										speed={2}
-									/>
-								</Sphere>
-							</Canvas>
-							<HeroImage src="../Images/moon.png" alt="moon image" />
-						</Suspense>
+						<Canvas>
+							<OrbitControls enableZoom={false} />
+							<ambientLight intensity={1} />
+							<directionalLight position={[3, 2, 1]} />
+							<Sphere args={[1, 100, 200]} scale={2.4}>
+								<MeshDistortMaterial
+									color="#94849b"
+									transparent={true}
+									opacity={0.8}
+									attach="material"
+									distort={0.6}
+									speed={2}
+								/>
+							</Sphere>
+						</Canvas>
+						<HeroImage src="../Images/moon.png" alt="moon image" />
 					</HeroRight>
 				</HeroContainer>
 			</HeroSection>
