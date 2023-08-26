@@ -4,7 +4,6 @@ import Spinner from "./Spinner";
 
 const WebDesign = React.lazy(() => import("./WebDesign"));
 const Development = React.lazy(() => import("./Development"));
-const SoftSkills = React.lazy(() => import("./SoftSkills"));
 const TechnicalSkills = React.lazy(() => import("./TechnicalSkills"));
 const SocialMedia = React.lazy(() => import("./SocialMedia"));
 
@@ -46,6 +45,7 @@ const WorksUl = styled.ul`
 	list-style: none;
 	display: flex;
 	flex-direction: column;
+	gap: 30px;
 `;
 
 const moveText = keyframes`
@@ -83,13 +83,7 @@ const AfterItem = styled.span`
 	color: #ffffff;
 `;
 
-const data = [
-	"Web Design",
-	"Development",
-	"Technical Skills",
-	"Soft Skills",
-	"Social Media",
-];
+const data = ["Web Design", "Development", "Technical Skills", "Social Media"];
 
 const Works = () => {
 	const [work, setWork] = useState("Web Design");
@@ -118,10 +112,6 @@ const Works = () => {
 					) : work === "Technical Skills" ? (
 						<React.Suspense fallback={<Spinner />}>
 							<TechnicalSkills />
-						</React.Suspense>
-					) : work === "Soft Skills" ? (
-						<React.Suspense fallback={<Spinner />}>
-							<SoftSkills />
 						</React.Suspense>
 					) : (
 						<React.Suspense fallback={<Spinner />}>
